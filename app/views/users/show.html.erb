@@ -1,0 +1,21 @@
+<% provide(:title, @user.firstname) %>
+<div class="row">
+
+  <div class="col-md-8">
+    <%= render 'follow_form' if logged_in? %>
+    <% if @user.products.any? %>
+      <h1 id="profileheader"><%= @user.firstname %>'s Products (<%= @user.products.count %>)</h1>
+        <div class="stats">
+      <a href="<%= followers_user_path(@user) %>">
+        <strong class="stat">
+          <%= @user.followers.count %> fans of <%= @user.firstname %>'s product recommendations
+        </strong>
+      </a>
+    </div>
+      <ol class="products">
+        <%= render @products %>
+      </ol>
+      <%= will_paginate @products %>
+    <% end %>
+  </div>
+</div>

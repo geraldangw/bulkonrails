@@ -1,0 +1,25 @@
+<% provide(:title, 'Product') %>
+
+<h1 id="productview">Product</h1>
+
+<ol class="products">
+<%= render @product %>
+
+<%= form_for([@review.product_id, @review]) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+<h5 id="reviewtitle"> Reviews (<%= @product.reviews.count %>) </h5>
+
+<ol class="products">
+  <%= render @product.reviews %>
+</ol>
+<%= will_paginate @reviews %>
+
+  <div id="reviewform" class="field">
+    <h5> Write your review </h5>
+    <%= f.hidden_field :product_id, :value => @product.id  %>
+    <%= f.text_area :content, placeholder: "Don't be shy..." %>
+      <%= f.submit "Share your review", class: "btn btn-primary", id: "loginbtn" %>
+  </div>
+
+<% end %>

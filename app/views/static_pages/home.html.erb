@@ -1,0 +1,45 @@
+<% provide(:title, "Home") %>
+
+<% if logged_in? %>
+<div class="row">
+    <!-- <aside class="col-md-4">
+        <section class="user_info">
+            <%= render 'shared/user_info' %>
+        </section>
+        <section class="stats">
+            <%= render 'shared/stats' %>
+        </section>
+
+        <section class="product_form">
+            <%= render 'shared/product_form' %>
+        </section>
+    </aside>
+</aside> -->
+<div class="col-md-8">
+    <h1 id="homeheader">Get Inspired </h1>
+    <h5>  <% @user ||= current_user %>
+      <div class="stats">
+        <a href="<%= following_user_path(@user) %>">
+          <strong class="stat">
+            Fans of <%= @user.following.count %> users' product recommendations
+          </strong>
+        </a>
+      </div>
+
+    </h5>
+
+    <%= render 'shared/feed' %>
+
+</div>
+
+</div>
+<% else %>
+
+<div class="center jumbotron">
+<h1 id="main">Exchange Product Ideas & Tips Now!</h1>
+<h2 id="subheader">A social sharing community for product aficionados.</h2>
+
+<%= link_to "Sign up now!", signup_path, class: "btn btn-lg btn-primary", id: "signup" %>
+</div>
+
+<% end %>

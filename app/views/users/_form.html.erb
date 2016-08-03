@@ -1,0 +1,39 @@
+<div id="signupandin" class="row">
+
+<%= form_for(@user) do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+
+  <%= f.select(:salutation, options_for_select([['Mr', 'Mr'], ['Mrs', "Mrs"],
+  ['Ms', 'Ms'],['Master', 'Master']], @user.salutation)) %>
+
+  <%= f.label :firstname %>
+  <%= f.text_field :firstname, class: 'form-control' %>
+
+  <%= f.label :lastname %>
+  <%= f.text_field :lastname, class: 'form-control' %>
+
+  <%= f.label :email %>
+  <%= f.email_field :email, class: 'form-control' %>
+
+  <%= f.label :Contact %>
+  <%= f.text_field :contactnum, class: 'form-control' %>
+
+  <%= f.label :address %>
+  <%= f.text_field :address, class: 'form-control' %>
+
+  <%= f.label :zipcode %>
+  <%= f.text_field :zipcode, class: 'form-control' %>
+
+  <%= f.label :country %>
+  <%= f.text_field :country, class: 'form-control' %>
+
+  <%= f.label :password %>
+  <%= f.password_field :password, class: 'form-control' %>
+
+  <%= f.label :password_confirmation %>
+  <%= f.password_field :password_confirmation, class: 'form-control' %>
+
+  <%= f.submit yield(:button_text), class: "btn btn-primary", id: "submitbutton" %>
+<% end %>
+
+</div>

@@ -1,0 +1,12 @@
+
+<li id="review-<%= review.id %>">
+  <span id="username" class="user"><%= link_to review.user.firstname, review.user %></span>
+  <span id="content"> <%= review.content %> </span>
+  <span class="timestamp">
+    Posted <%= time_ago_in_words(review.created_at) %> ago.
+    <% if current_user?(review.user) %>
+      <%= link_to "delete", review, method: :delete,
+                                       data: { confirm: "You sure?" } %>
+    <% end %>
+  </span>
+</li>
