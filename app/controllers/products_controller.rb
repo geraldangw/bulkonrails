@@ -9,6 +9,7 @@ class ProductsController < ApplicationController
 
   def create
     @product = current_user.products.build(product_params)
+    @vote = current_user.votes.build(vote_params)
     if @product.save
       flash[:success] = 'Product created!'
       redirect_to current_user
@@ -23,6 +24,7 @@ class ProductsController < ApplicationController
     @products = @user.products.paginate(page: params[:page])
     @reviews = @user.reviews.paginate(page: params[:page])
     if logged_in?
+    @vote = current_user.votes.build(vote_params)
     @product = Product.find(params[:id])
     @review = current_user.reviews.build
     @feed_items = current_user.feed.paginate(page: params[:page])
@@ -46,15 +48,17 @@ class ProductsController < ApplicationController
   end
 
   def destroy
+    @product = Product.find(params[:id])
     @product.destroy
     flash[:success] = 'Product deleted'
     redirect_to request.referrer || root_url
   end
 
+
   private
 
     def product_params
-      params.require(:product).permit(:product, :description, :brand, :category, :price, :picture)
+      params.require(:product).permit(:product, :description, :brand, :category, :price, :picture, :target)
     end
 
     def correct_user

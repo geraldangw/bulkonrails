@@ -1,14 +1,14 @@
 <% provide(:title, @user.firstname) %>
 <div class="row">
 
-  <div class="col-md-8">
+  <div>
     <%= render 'follow_form' if logged_in? %>
-    <% if @user.products.any? %>
       <h1 id="profileheader"><%= @user.firstname %>'s Products (<%= @user.products.count %>)</h1>
+        <% if @user.products.any? %>
         <div class="stats">
       <a href="<%= followers_user_path(@user) %>">
-        <strong class="stat">
-          <%= @user.followers.count %> fans of <%= @user.firstname %>'s product recommendations
+        <strong class="stat" id="fans">
+        <%= pluralize(@user.followers.count, "fan") %> of <%= @user.firstname %>'s products.
         </strong>
       </a>
     </div>

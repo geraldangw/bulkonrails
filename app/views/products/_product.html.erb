@@ -1,4 +1,5 @@
 <li id="product-<%= product.id %>">
+  <div id="productone">
   <%= link_to gravatar_for(product.user, size: 50), product.user %>
   <span class="user"><%= link_to product.user.firstname, product.user %></span>
   <span class="description">
@@ -6,9 +7,12 @@
   <span class="product"> Brand: <%= product.brand %> </span>
   <span class="product"> Category: <%= product.category %> </span>
   <span class="product"> Price: SGD$  <%= number_with_precision(product.price, precision: 2) %> </span>
-  <span id="description"> Description: <%= product.description %> </span>
-    <%= image_tag product.picture.url if product.picture? %>
-  </span>
+  <span class="product"> Target:  <%= product.target %> buyers </span>
+
+</div>
+<div id="producttwo">
+ <%= image_tag product.picture.url if product.picture? %>
+</div>
   <span class="timestamp">
     Posted <%= time_ago_in_words(product.created_at) %> ago.
     <% if current_user?(product.user) %>
@@ -16,7 +20,7 @@
                                        data: { confirm: "You sure?" } %>
       <%= link_to "EDIT", edit_product_path(product.id) %>
     <% end %>
-    <%= link_to "REVIEWS", product %>
+    <%= link_to "REVIEWS (#{@product.reviews.count})", product %>
     </span>
 
 </li>

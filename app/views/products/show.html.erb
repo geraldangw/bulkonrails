@@ -5,6 +5,20 @@
 <ol class="products">
 <%= render @product %>
 
+  <span id="description"> MESSAGE: <%= @product.description %> </span>
+
+  <%= form_for([@vote.product_id, @vote]) do |f| %>
+    <%= render 'shared/error_messages', object: f.object %>
+
+  <h5 id="reviewtitle"> Votes (<%= @product.votes.count %>) </h5>
+
+    <div id="reviewform" class="field">
+      <%= f.hidden_field :product_id, :value => @product.id  %>
+        <%= f.submit "JOIN", class: "btn btn-primary", id: "loginbtn" %>
+    </div>
+
+  <% end %>
+
 <%= form_for([@review.product_id, @review]) do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
 

@@ -2,7 +2,7 @@
 
 <% if logged_in? %>
 <div class="row">
-    <aside class="col-md-4">
+    <aside>
         <section class="user_info">
             <%= render 'shared/user_info' %>
         </section>
@@ -14,11 +14,11 @@
         </section>
     </aside>
 </aside>
-<div class="col-md-8">
+<div>
     <h3>Get Inspired
       <a href="<%= following_user_path(@user) %>">
         <strong id="following" class="stat">
-          Fans of <%= @user.following.count %> users' product recommendations
+          Fan of <%= pluralize(@user.following.count, "user") %>
         </strong>
       </a>
 

@@ -1,4 +1,4 @@
-<li>
+<li id="userlist">
   <%= gravatar_for user, size: 50 %>
   <%= link_to user.firstname, user %>
   <%= pluralize(user.followers.count, "fan") %>
