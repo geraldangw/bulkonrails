@@ -38,7 +38,7 @@ end
     @review = current_user.reviews.build
     @vote = @product.votes.build
     @feed_items = current_user.feed.paginate(page: params[:page])
-    @feed_reviews = @product.reviews.paginate(page: params[:page])
+
   end
   end
 
