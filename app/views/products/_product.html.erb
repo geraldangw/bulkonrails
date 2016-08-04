@@ -7,8 +7,7 @@
   <span class="product"> Brand: <%= product.brand %> </span>
   <span class="product"> Category: <%= product.category %> </span>
   <span class="product"> Price: SGD$  <%= number_with_precision(product.price, precision: 2) %> </span>
-
-<h4> Target: <%= product.votes.count %> /<%= product.target %>  </h4>
+<h4 id="targetstatus"> Target: <%= product.votes.count %> /<%= product.target %>  </h4>
 
 <% if product.votes.count >= product.target %>
 
@@ -18,8 +17,6 @@
 
 <h4 id="pending"> <%= product.target - product.votes.count %> buyers pending </h4>
 
-<p id="joinnow"> <%= link_to "JOIN NOW!", product%> </p>
-
 <% end %>
 
 </div>
@@ -27,13 +24,14 @@
  <%= image_tag product.picture.url if product.picture? %>
 </div>
   <span class="timestamp">
-    Posted <%= time_ago_in_words(product.created_at) %> ago.
+    <p id="timeposted"> Posted <%= time_ago_in_words(product.created_at) %> ago. </p>
     <% if current_user?(product.user) %>
       <%= link_to "DELETE", product, method: :delete,
-                                       data: { confirm: "You sure?" } %>
-      <%= link_to "EDIT", edit_product_path(product.id) %>
+                                       data: { confirm: "You sure?" }, class: "bottom" %>
+      <%= link_to "EDIT", edit_product_path(product.id), class: "bottom" %>
     <% end %>
-    <%= link_to "REVIEWS (#{product.reviews.count})", product %>
+
+    <%= link_to "MORE", product, class: "bottom" %>
     </span>
 
 </li>

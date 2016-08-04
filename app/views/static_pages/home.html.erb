@@ -2,19 +2,6 @@
 
 <% if logged_in? %>
 <div class="row">
-    <!-- <aside class="col-md-4">
-        <section class="user_info">
-            <%= render 'shared/user_info' %>
-        </section>
-        <section class="stats">
-            <%= render 'shared/stats' %>
-        </section>
-
-        <section class="product_form">
-            <%= render 'shared/product_form' %>
-        </section>
-    </aside>
-</aside> -->
 <div>
     <h1 id="homeheader">Browse Products</h1>
     <h5>  <% @user ||= current_user %>

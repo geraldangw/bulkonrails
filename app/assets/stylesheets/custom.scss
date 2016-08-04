@@ -3,8 +3,6 @@
 
 /* mixins, variables, etc. */
 
-$gray-medium-light: #eaeaea;
-
 @mixin box_sizing {
   -moz-box-sizing:    border-box;
   -webkit-box-sizing: border-box;
@@ -37,23 +35,20 @@ body {
   width: 50%;
   display: inline-block;
 }
-#submitbutton, #create {
-  background-color: black;
-}
 
-#loginbtn {
+#loginbtn, #submitbutton {
   background-color: #343434;
 }
 
- #signupheader, #productview, #productupdate,  #homeheader, #users, #profileheader {
+#productview, #homeheader, #users, #profileheader {
   margin-top: 10%;
   text-align: left;
   font-size: 36px;
   font-family: 'Patua One', cursive;
-  color: red;
+  color: #343434;
 }
 
-#signupheader, #login, #createproduct,#update, {
+#signupheader, #login, #createproduct, #update, #productupdate {
   margin-top: 7%;
   text-align: center;
   font-size: 36px;
@@ -387,13 +382,18 @@ input {
     margin-top: 5px;
   }
 }
-#reviewform, #username, #reviewtitle {
+#reviewform, #username {
   margin-left: 60px;
+  margin-top: 5%;
 }
 
 #reviewform, #reviewtitle, #reviewfeed, #votetitle {
   font-size: 16px;
 }
+ #reviewtitle {
+   margin-top: 2%;
+   margin-left: 5.5%;
+ }
 
 #followbutton, #unfollowbutton {
   margin-top: 5%;
@@ -527,7 +527,7 @@ font-weight: bold;
 }
 
 #productone {
-  width: 700px;
+  width: 650px;
   display: inline-block;
 }
 
@@ -539,8 +539,8 @@ font-weight: bold;
 }
 
 img {
-  height: 320px;
-  width: 350px;
+  height: 350px;
+  width: 450px;
   border-radius: 5px;
 }
 .gravatar {
@@ -566,27 +566,28 @@ img {
 }
 #search-form {
   margin-top: 10%;
+  font-size: 16px;
 }
 #success {
-  margin-top: 4%;
   background-color: green;
   border-radius: 5px;
   height: 40px;
-  width: 150px;
+  width: 180px;
   color: white;
-  padding-left: 1.5%;
-  padding-top: 1.5%;
+  padding-left: 5%;
+  padding-top: 1.8%;
+  font-size: 16px;
 }
 
 #pending {
-  margin-top: 4%;
   background-color: red;
   border-radius: 5px;
   height: 40px;
   width: 180px;
   color: white;
-  padding-left: 3%;
+  padding-left: 5%;
   padding-top: 2%;
+  font-size: 16px;
 }
 
 #joinnow {
@@ -625,4 +626,61 @@ img {
   margin-left: 5%;
   padding-top: 1.4%;
   border-radius: 5px;
+}
+.products {
+  padding: 10px;
+  font-size: 16px;
+}
+.product {
+  font-size: 16px;
+}
+#targetstatus {
+  margin-top: 4%;
+  background-color: #343434;
+  border-radius: 5px;
+  height: 40px;
+  width: 180px;
+  color: white;
+  padding-left: 8%;
+  padding-top: 2%;
+  font-size: 16px;
+}
+.stat {
+  font-size: 20px;
+}
+#review_content {
+  font-size: 14px;
+}
+a {
+  font-size: 16px;
+}
+.bottom {
+  margin-bottom: 5px;
+  color: rgb(162, 11, 38);
+  padding: 2px;
+  border-radius: 3px;
+  font-size: 14px;
+}
+.bottom:hover {
+  color: #343434;
+  text-decoration: none;
+}
+#timeposted {
+  font-size: 14px;
+  display:inline;
+}
+
+#joinbutton {
+  background-color: #343434;
+  margin-top: 2%;
+  padding: 20px;
+  border-radius: 5px;
+  color: white;
+}
+#joinbutton:hover {
+  background-color:green;
+}
+#reviewheader {
+  font-size: 16px;
+  margin-top: -5%;
 }

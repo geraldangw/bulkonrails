@@ -11,8 +11,8 @@ class VotesController < ApplicationController
   def create
     @vote = current_user.votes.build(vote_params)
     if @vote.save
-      p "Vote was saved"
-      flash[:success] = 'Vote created!'
+      p "Thanks for joining!"
+      flash[:success] = 'Thanks for joining!'
       redirect_to :back
     else
       @feed_items = []
