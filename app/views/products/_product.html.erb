@@ -7,9 +7,8 @@
   <span class="product"> Brand: <%= product.brand %> </span>
   <span class="product"> Category: <%= product.category %> </span>
   <span class="product"> Price: SGD$  <%= number_with_precision(product.price, precision: 2) %> </span>
-  <span class="product"> Target:  <%= product.target %> buyers </span>
 
-<h3> Votes (<%= @product.votes.count %>) </h3>
+<h4> Target: <%= product.votes.count %> /<%= product.target %>  </h4>
 
 </div>
 <div id="producttwo">
@@ -22,7 +21,7 @@
                                        data: { confirm: "You sure?" } %>
       <%= link_to "EDIT", edit_product_path(product.id) %>
     <% end %>
-    <%= link_to "REVIEWS (#{@product.reviews.count})", product %>
+    <%= link_to "JOIN/REVIEWS (#{product.reviews.count})", product %>
     </span>
 
 </li>

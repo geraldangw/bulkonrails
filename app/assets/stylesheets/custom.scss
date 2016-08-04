@@ -389,7 +389,7 @@ input {
   margin-left: 60px;
 }
 
-#reviewform {
+#reviewform, #reviewtitle, #reviewfeed, #votetitle {
   font-size: 16px;
 }
 
@@ -561,4 +561,7 @@ img {
 }
 .product {
   font-size: 16px;
+}
+#search-form {
+  margin-top: 10%;
 }

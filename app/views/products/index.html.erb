@@ -1,0 +1,12 @@
+<%= form_tag(products_path, :method => "get", id: "search-form") do %>
+<%= text_field_tag :search, params[:search], placeholder: "Search Products" %>
+<%= submit_tag "Search" %>
+<% end %>
+
+<% if @product.present? %>
+  <ol class="products">
+  <%= render @product %>
+</ol>
+<% else %>
+  <p>There are no products containing the term(s) <%= params[:search] %>.</p>
+<% end %>

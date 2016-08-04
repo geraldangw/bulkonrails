@@ -9,7 +9,7 @@
 
   <%= form_for([@product, @vote]) do |f| %>
 
-  <h5 id="votetitle"> Votes (<%= @product.votes.count %>) </h5>
+  <h5 id="votetitle"> Join the Bulk Purchase Now! (<%= @product.votes.count %>) </h5>
 
     <div id="voteform" class="field">
       <%= f.hidden_field :product_id, :value => @product.id  %>
@@ -23,7 +23,7 @@
 
 <h5 id="reviewtitle"> Reviews (<%= @product.reviews.count %>) </h5>
 
-<ol class="products">
+<ol id="reviewfeed" class="products">
   <%= render @product.reviews %>
 </ol>
 <%= will_paginate @reviews %>
