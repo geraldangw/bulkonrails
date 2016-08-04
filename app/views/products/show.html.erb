@@ -7,6 +7,12 @@
 
   <span id="description"> MESSAGE: <%= @product.description %> </span>
 
+  <% if @product.votes.count >= @product.target %>
+
+  <h2 id="targetachieved"> TARGET ACHIEVED </h2>
+
+  <% else %>
+
   <%= form_for([@product, @vote]) do |f| %>
 
   <h5 id="votetitle"> Join the Bulk Purchase Now! (<%= @product.votes.count %>) </h5>
@@ -15,6 +21,8 @@
       <%= f.hidden_field :product_id, :value => @product.id  %>
         <%= f.submit "JOIN", class: "btn btn-primary", id: "loginbtn" %>
     </div>
+
+  <% end %>
 
   <% end %>
 

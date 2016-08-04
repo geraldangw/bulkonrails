@@ -50,6 +50,7 @@ body {
   text-align: left;
   font-size: 36px;
   font-family: 'Patua One', cursive;
+  color: red;
 }
 
 #signupheader, #login, #createproduct,#update, {
@@ -57,6 +58,7 @@ body {
   text-align: center;
   font-size: 36px;
   font-family: 'Patua One', cursive;
+  color: red;
 }
 
 #signupandin {
@@ -610,4 +612,17 @@ img {
   text-align: center;
   margin-left: 25%;
   width: 50%;
+}
+#searchsubmit {
+  background-color: red;
+  color: white;
+}
+#targetachieved {
+  background-color: grey;
+  color: white;
+  width: 95%;
+  height: 50px;
+  margin-left: 5%;
+  padding-top: 1.4%;
+  border-radius: 5px;
 }
