@@ -495,7 +495,7 @@ font-weight: bold;
 
 #loginheader {
   margin-top: 50px;
-  margin-top: 20px;
+  margin-top: 35px;
   font-size: 30px;
   color: #343434;
   font-family: 'Patua One', cursive;
@@ -589,4 +589,25 @@ img {
 
 #joinnow {
   margin-left: 7%;
+}
+
+#aboutheader {
+  margin-top: 75px;
+  text-align: center;
+  color: red;
+}
+#aboutdescription {
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
+}
+#contactheader {
+  margin-top: 75px;
+  text-align: center;
+  color: red;
+}
+#contentdescription {
+  text-align: center;
+  margin-left: 25%;
+  width: 50%;
 }
