@@ -22,7 +22,7 @@ class Product < ApplicationRecord
   end
 
   def self.search(keyword)
-    where(['brand LIKE ? OR product LIKE ?', "%#{keyword}%", "%#{keyword}%"])
+    where(['brand ILIKE ? OR product ILIKE ?', "%#{keyword}%", "%#{keyword}%"])
   end
 
 end
