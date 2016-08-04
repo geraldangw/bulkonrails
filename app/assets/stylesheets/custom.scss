@@ -537,7 +537,7 @@ font-weight: bold;
 }
 
 img {
-  height: 300px;
+  height: 320px;
   width: 350px;
   border-radius: 5px;
 }
@@ -564,4 +564,29 @@ img {
 }
 #search-form {
   margin-top: 10%;
+}
+#success {
+  margin-top: 4%;
+  background-color: green;
+  border-radius: 5px;
+  height: 40px;
+  width: 150px;
+  color: white;
+  padding-left: 1.5%;
+  padding-top: 1.5%;
+}
+
+#pending {
+  margin-top: 4%;
+  background-color: red;
+  border-radius: 5px;
+  height: 40px;
+  width: 180px;
+  color: white;
+  padding-left: 3%;
+  padding-top: 2%;
+}
+
+#joinnow {
+  margin-left: 7%;
 }
