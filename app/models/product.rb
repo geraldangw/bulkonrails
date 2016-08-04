@@ -1,6 +1,7 @@
 class Product < ApplicationRecord
   belongs_to :user
   has_many :reviews, dependent: :destroy
+  has_many :votes, dependent: :destroy
   default_scope -> { order(created_at: :desc) }
   mount_uploader :picture, PictureUploader
   validates :product, presence: true

@@ -9,6 +9,8 @@
   <span class="product"> Price: SGD$  <%= number_with_precision(product.price, precision: 2) %> </span>
   <span class="product"> Target:  <%= product.target %> buyers </span>
 
+<h3> Votes (<%= @product.votes.count %>) </h3>
+
 </div>
 <div id="producttwo">
  <%= image_tag product.picture.url if product.picture? %>

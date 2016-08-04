@@ -9,7 +9,6 @@ class ProductsController < ApplicationController
 
   def create
     @product = current_user.products.build(product_params)
-    @vote = current_user.votes.build(vote_params)
     if @product.save
       flash[:success] = 'Product created!'
       redirect_to current_user
@@ -20,13 +19,15 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @product = Product.find(params[:id])
     @user = User.find(params[:id])
     @products = @user.products.paginate(page: params[:page])
     @reviews = @user.reviews.paginate(page: params[:page])
+    @votes = @user.votes.paginate(page: params[:page])
     if logged_in?
-    @vote = current_user.votes.build(vote_params)
     @product = Product.find(params[:id])
     @review = current_user.reviews.build
+    @vote = @product.votes.build
     @feed_items = current_user.feed.paginate(page: params[:page])
     @feed_reviews = @product.reviews.paginate(page: params[:page])
   end

@@ -11,8 +11,8 @@ class VotesController < ApplicationController
   def create
     @vote = current_user.votes.build(vote_params)
     if @vote.save
-      p "Thanks for joining!"
-      flash[:success] = 'Thanks for joining!'
+      p "Vote was saved"
+      flash[:success] = 'Vote created!'
       redirect_to :back
     else
       @feed_items = []
@@ -33,7 +33,7 @@ class VotesController < ApplicationController
     end
 
     def correct_user
-      @vote = current_user.reviews.find_by(id: params[:id])
+      @vote = current_user.votes.find_by(id: params[:id])
       redirect_to root_url if @vote.nil?
     end
 

@@ -389,6 +389,10 @@ input {
   margin-left: 60px;
 }
 
+#reviewform {
+  font-size: 16px;
+}
+
 #followbutton, #unfollowbutton {
   margin-top: 5%;
 }
@@ -419,7 +423,8 @@ span.picture {
 }
 
 #description {
-  font-size: 14px;
+  font-size: 16px;
+  margin-top: 2%;
   margin-bottom: 2%;
   display: block;
   padding-right: 50px;
@@ -532,8 +537,8 @@ font-weight: bold;
 }
 
 img {
-  height: 250px;
-  width: 300px;
+  height: 300px;
+  width: 350px;
   border-radius: 5px;
 }
 .gravatar {
@@ -546,8 +551,14 @@ img {
   margin-top:10%;
 }
 #plist {
-  margin-top: 32%;
+  margin-top: 35%;
 }
 #plisttwo {
   margin-top: 15%;
+}
+#voteform, #votetitle {
+  margin-left: 5%;
+}
+.product {
+  font-size: 16px;
 }

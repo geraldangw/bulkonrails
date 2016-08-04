@@ -7,12 +7,11 @@
 
   <span id="description"> MESSAGE: <%= @product.description %> </span>
 
-  <%= form_for([@vote.product_id, @vote]) do |f| %>
-    <%= render 'shared/error_messages', object: f.object %>
+  <%= form_for([@product, @vote]) do |f| %>
 
-  <h5 id="reviewtitle"> Votes (<%= @product.votes.count %>) </h5>
+  <h5 id="votetitle"> Votes (<%= @product.votes.count %>) </h5>
 
-    <div id="reviewform" class="field">
+    <div id="voteform" class="field">
       <%= f.hidden_field :product_id, :value => @product.id  %>
         <%= f.submit "JOIN", class: "btn btn-primary", id: "loginbtn" %>
     </div>
